@@ -6,17 +6,17 @@ Procedure:
 1. Create S3 bucket empid-bucketname (Please ensure not to open the bucket to public)  
     
 ![image](https://user-images.githubusercontent.com/82586609/115119072-4251de00-9fc4-11eb-8b55-3368a9c10939.png)
-
+  
 2. Create three folders inside bucket (A,B,C)  
-
+  
 ![image](https://user-images.githubusercontent.com/82586609/115119112-66adba80-9fc4-11eb-89cd-4e9fc3f79024.png)
-
+  
 3. Put in files inside each of the folders  
     Created dummy read_me files named "foldername_Readme.txt"  
     The contents contain: "Readme file from Foldername"  
- 
+   
 ![image](https://user-images.githubusercontent.com/82586609/115119186-b3919100-9fc4-11eb-8d2a-81cd0ce0ff62.png)
-
+  
 4. Create a flask app that gets the folder name and lists the filename present in the corresponding folder. (Use Boto3 for reading the contents of the folder) and test the code in local  
     
     4a. Make the relevant codes in github  
@@ -28,13 +28,19 @@ Procedure:
         4b-3: Instal the requirements file  
         4b-4: Install awscli and configure using the s3 access ID and Key  
         4b-5: Run the application using python app.py  
+  
         ![image](https://user-images.githubusercontent.com/82586609/115119361-93160680-9fc5-11eb-99ab-f3925441f530.png)  
+  
         ![image](https://user-images.githubusercontent.com/82586609/115119367-a0cb8c00-9fc5-11eb-8050-5dcf67bd17d6.png)  
+  
         ![image](https://user-images.githubusercontent.com/82586609/115119439-fa33bb00-9fc5-11eb-93c4-b27057a909c8.png)  
+  
     The website is now deployed from local environment as shown below:  
     ![image](https://user-images.githubusercontent.com/82586609/115119488-35ce8500-9fc6-11eb-836d-5718dc879cf6.png)  
+  
     Add '/storage' to access the below page:  
     ![image](https://user-images.githubusercontent.com/82586609/115119507-4ed73600-9fc6-11eb-8dfd-630dfe12475a.png)  
+  
     As could be seen, the page lists all the files present in the S3 bucket. They could also be downloaded from there. In addition, we can use the upload option to upload new files without loggin into the aws consolde. The files uploaded here would be reflected in the S3 console.  
     
     
@@ -43,7 +49,7 @@ Procedure:
 5. Open an EC2 instance with t2.micro in the same region as S3 console (i.e., Mumbai)  
     ![image](https://user-images.githubusercontent.com/82586609/115119586-ce650500-9fc6-11eb-99af-8dff52766e23.png)  
   
-IAM users are tagged to this instance with appropriate roles  
+    IAM users are tagged to this instance with appropriate roles  
   
 6. The security group of the instance is configured as below (allowing through port:8085)  
     Note: Similarly, the app.py needs to be configured to allow only port 8085 (unlike the case in local execution)  
