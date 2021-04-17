@@ -7,7 +7,7 @@ from s3_demo import list_files, download_file, upload_file
 
 app = Flask(__name__)
 UPLOAD_FOLDER = "uploads"
-BUCKET = "insert_bucket_name_here"
+BUCKET = "1905-assignment1"
 
 
 @app.route('/')
