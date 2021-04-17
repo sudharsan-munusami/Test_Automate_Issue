@@ -5,7 +5,7 @@ Procedure:
 
 1. Create S3 bucket empid-bucketname (Please ensure not to open the bucket to public)
     
-![image](https://user-images.githubusercontent.com/82586609/115118901-387bab00-9fc3-11eb-80b5-867e20324332.png | 25X10)
+![image](https://user-images.githubusercontent.com/82586609/115118901-387bab00-9fc3-11eb-80b5-867e20324332.png = 25X10)
 
 
 [![HitCount](http://hits.dwyl.io/ro6ley/flask-drive.svg)](http://hits.dwyl.io/ro6ley/flask-drive)
