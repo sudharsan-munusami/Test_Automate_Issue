@@ -1,3 +1,13 @@
+Goal: 
+Create a flask app that displays the contents present in a aws s3 bucket
+
+Procedure:
+
+1. Create S3 bucket empid-bucketname (Please ensure not to open the bucket to public)
+    
+![image](https://user-images.githubusercontent.com/82586609/115118901-387bab00-9fc3-11eb-80b5-867e20324332.png)
+
+
 [![HitCount](http://hits.dwyl.io/ro6ley/flask-drive.svg)](http://hits.dwyl.io/ro6ley/flask-drive)
 
 # FlaskDrive 
