@@ -1,5 +1,3 @@
----REVIEW BRANCH
-  
 Goal:
 Create a flask app that displays the contents present in a aws s3 bucket  
 
@@ -26,17 +24,26 @@ Procedure:
     
     4b.To run the code in local, open an Ubuntu terminal and follow the below steps:  
         4b-1: Clone into the github branch (SUDSM_HARTFORD_ASSIGNMENT1)  
-        4b-2: Open and activate a virtual environment (name:htassign)  
-        4b-3: Instal the requirements file  
+        4b-2: Open and activate a virtual environment (name:htassign) 
+                For creating virtual environment, run "python3 -m venv htassign"  
+                Now to activate it run source "htassign/bin/activate"  
+                After running this the virtual environment would be activated.  
+        4b-3: Install the requirements file  
         4b-4: Install awscli and configure using the s3 access ID and Key  
+                Install awscli by typing in "pip install awscli" in the terminal  
+                Check the version of awscli by using "aws --version" (I have installed version "aws-cli/1.19.53")  
+                Post installation of awscli, to get access to the S3 bucket type "aws configure"  
+                This would ask for the access ID, access key, region and output format  
+                Enter the details as downloaded from aws while creating S3 bucket  
         4b-5: Run the application using python app.py  
-  
-        ![image](https://user-images.githubusercontent.com/82586609/115119361-93160680-9fc5-11eb-99ab-f3925441f530.png)  
-  
-        ![image](https://user-images.githubusercontent.com/82586609/115119367-a0cb8c00-9fc5-11eb-8050-5dcf67bd17d6.png)  
-  
-        ![image](https://user-images.githubusercontent.com/82586609/115119439-fa33bb00-9fc5-11eb-93c4-b27057a909c8.png)  
-  
+                Before running, check if python is installed by running "python --version"  
+                If not installed, try the below commands in order:  
+                sudo apt update  
+                sudo apt install python3.8  
+                python --version  
+        ![image](https://user-images.githubusercontent.com/82586609/115176836-82f84700-a0eb-11eb-81b3-1fba284c1971.png)  
+        ![image](https://user-images.githubusercontent.com/82586609/115176862-91def980-a0eb-11eb-9a2d-35e615826277.png)  
+        ![image](https://user-images.githubusercontent.com/82586609/115176884-9e635200-a0eb-11eb-9563-95b573dce09e.png)            
     The website is now deployed from local environment as shown below:  
     ![image](https://user-images.githubusercontent.com/82586609/115119488-35ce8500-9fc6-11eb-836d-5718dc879cf6.png)  
   
@@ -54,7 +61,9 @@ Procedure:
     IAM users are tagged to this instance with appropriate roles  
   
 6. The security group of the instance is configured as below (allowing through port:8085)  
-    Note: Similarly, the app.py needs to be configured to allow only port 8085 (unlike the case in local execution)  
+    Note: Similarly, the app.py needs to be configured to allow only port 8085 (unlike the case in local execution)    
+    Note: In addition to port 8085, HHTP and SSH are necessary. SSH is added to be able to connect to the EC2 instance from local machine. HTTP is enabled, as it's required to open the webpage.  
+    Note: The other 2 entries (192.168.43.11/32 & 106.197.40.102/32) are technically not needed. This is because we have allowed all IPs to access in the above mentioned  steps. But still, I wasn't able to access the website through my Tiger lap's IP (because of firewall settings, the site was accessible in all other devices). Hence, this specific rule was given to check if firewall could be over-rided. Could be ignored.  
     ![image](https://user-images.githubusercontent.com/82586609/115119620-02d8c100-9fc7-11eb-9c65-286779d30d55.png)  
   
 7. Running the Flask app from EC2 instance:  
@@ -75,7 +84,13 @@ Budget set for the project:
   
 Billing information post completion:  
 ![image](https://user-images.githubusercontent.com/82586609/115120074-26047000-9fc9-11eb-89fa-a229bbc7480f.png)  
-  
+
+Post 48 hours:  
+Billing  information post 48 hours:  
+ ![image](https://user-images.githubusercontent.com/82586609/115176331-88a15d00-a0ea-11eb-9e15-7bd7ae640fa6.png)    
+Top free tier services by usage(EC2 has incurred 1.34% of the total free-tier usage):  
+![image](https://user-images.githubusercontent.com/82586609/115176579-049ba500-a0eb-11eb-9dc5-0c68e6b2f1c1.png)
+
 NOTE:  
 URL OF THE DEPLOYED APP:   
 Home: http://13.234.20.181:8085/  
