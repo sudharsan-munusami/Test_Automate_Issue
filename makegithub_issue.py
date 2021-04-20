@@ -3,12 +3,12 @@ import requests
 
 # Authentication for user filing issue (must have read/write access to
 # repository to add issue to)
-USERNAME = 'CHANGEME'
-PASSWORD = 'CHANGEME'
+USERNAME = 'sudharsan-munusami'
+PASSWORD = 'Tiger@06051997'
 
 # The repository to add this issue to
-REPO_OWNER = 'CHANGEME'
-REPO_NAME = 'CHANGEME'
+REPO_OWNER = 'sudharsan-munusami'
+REPO_NAME = 'Test_Automate_Issue'
 
 def make_github_issue(title, body=None, assignee=None, milestone=None, labels=None):
     '''Create an issue on github.com using the given parameters.'''
